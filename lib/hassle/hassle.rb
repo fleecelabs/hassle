@@ -20,8 +20,8 @@ class Hassle
       [200, {'Content-Type' => 'text/css',
              'Content-Length' => length,
              'Last-Modified' => File.mtime(stylesheet_path).httpdate,
-             'Cache-Control' => "public, max-age=#{60 * 60 * 24 * 365}",
-             'Expires' => (Time.now + 1.year).httpdate}, [content]]
+             'Cache-Control' => "public, max-age=#{10.years.to_i}",
+             'Expires' => (Time.now + 10.years).httpdate}, [content]]
       
     else
       # Not a request Hassle cares about
